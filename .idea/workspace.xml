@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6da1ab79-cfc0-4a3e-b7b5-40d3381ca1c1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/index1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
@@ -22,8 +21,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Html5" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -46,7 +46,8 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
+    <property name="last_opened_file_path" value="F:/vue_DPSummary" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -58,7 +59,17 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\webproject\gitproject\layuiPubupBox\layui-master\dist" />
+      <recent name="F:\webproject\gitproject\layuiPubupBox\layui-master\examples\res\js" />
+      <recent name="F:\webproject\gitproject\layuiPubupBox\layui-master\examples" />
+      <recent name="F:\webproject\gitproject\layuiPubupBox\layui-master\examples\extends" />
+      <recent name="F:\webproject\gitproject\layuiPubupBox\layui-master\res" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\webproject\gitproject\layuiPubupBox\layui-master\examples\res" />
+      <recent name="F:\webproject\gitproject\layuiPubupBox" />
+      <recent name="F:\webproject\gitproject" />
       <recent name="F:\webproject\gitproject\js" />
     </key>
   </component>
@@ -108,7 +119,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587446999612</updated>
-      <workItem from="1589987544375" duration="3601000" />
+      <workItem from="1589987544375" duration="3700000" />
+      <workItem from="1590073120831" duration="1974000" />
+      <workItem from="1590240554111" duration="5727000" />
+      <workItem from="1590285107198" duration="28852000" />
     </task>
     <servers />
   </component>
@@ -135,14 +149,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="251" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589989904331" />
-    <state x="413" y="46" key="FileChooserDialogImpl" timestamp="1589990160810">
+    <state x="413" y="46" key="FileChooserDialogImpl" timestamp="1590317787915">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="46" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589990160810" />
-    <state x="262" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1589989254621">
+    <state x="413" y="46" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590317787915" />
+    <state x="262" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1590325153266">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="262" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1589989254621" />
+    <state x="262" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1590325153266" />
   </component>
   <component name="masterDetails">
     <states>
