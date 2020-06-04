@@ -16,34 +16,621 @@
 
 <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
 <div id="main" style="width: 600px;height:400px;"></div>
-<script type="text/javascript">
+<!--<script type="text/javascript">-->
 
-    // 基于准备好的dom，初始化echarts实例
-   // var myChart = echarts.init(document.getElementById('main'));
+<!--    // 基于准备好的dom，初始化echarts实例-->
+<!--   // var myChart = echarts.init(document.getElementById('main'));-->
 
-    // 指定图表的配置项和数据
-    var option = {
+<!--    // 指定图表的配置项和数据-->
+<!--    var option = {-->
+<!--        title: {-->
+<!--            text: '第一个[ ECharts ]实例'-->
+<!--        },-->
+<!--        tooltip: {},-->
+<!--        legend: {-->
+<!--            // data:['销量']-->
+<!--        },-->
+<!--        xAxis: {-->
+<!--            type: "value",-->
+<!--            axisLine: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            axisTick: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            splitLine: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            axisLabel: {-->
+<!--                show: false-->
+<!--            }-->
+<!--           // symbol:'none',smooth:true,-->
+
+<!--        },-->
+<!--        // yAxis: {-->
+<!--        //     inverse: true-->
+<!--        // },-->
+<!--        yAxis : [-->
+<!--            {-->
+
+<!--                type: "category",-->
+<!--                //name: '面雨量(mm)',-->
+<!--                // nameLocation: 'start',  // 设置坐标轴名称显示位置-->
+<!--                // nameTextStyle: {        // 设置坐标轴名称的样式-->
+<!--                //     color: '#05c1e4',-->
+<!--                //     fontSize: 16-->
+<!--                // },-->
+<!--                // offset: 0,-->
+<!--                // min: 0,-->
+<!--                // max: 60,-->
+<!--                // interval: 10,-->
+<!--                axisLabel: {-->
+<!--                    color: "red",-->
+<!--                    fontSize: 12-->
+<!--                },-->
+<!--                axisLine: {-->
+<!--                    show: false-->
+<!--                },-->
+<!--                axisTick: {-->
+<!--                    show: false-->
+<!--                },-->
+<!--                splitLine: {-->
+<!--                    show: false-->
+<!--                },-->
+<!--                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],-->
+<!--               // inverse: true //反转坐标轴-->
+<!--            },-->
+<!--            {-->
+<!--                type: 'category',-->
+<!--                axisLine: {-->
+<!--                    show: false-->
+<!--                },-->
+<!--                axisTick: {-->
+<!--                    show: false-->
+<!--                },-->
+<!--                axisLabel: {-->
+<!--                    show: true,-->
+<!--                    inside: false,-->
+<!--                    textStyle: {-->
+<!--                        color: '#b3ccf8',-->
+<!--                        fontSize: '14',-->
+<!--                        fontFamily: 'PingFangSC-Regular'-->
+<!--                    },-->
+<!--                    formatter: function (val) {-->
+<!--                        return `${val}k`-->
+<!--                    }-->
+<!--                },-->
+<!--                splitArea: {-->
+<!--                    show: false-->
+<!--                },-->
+<!--                splitLine: {-->
+<!--                    show: false-->
+<!--                },-->
+<!--                data: [5, 20, 36, 10, 10, 20]-->
+<!--            }-->
+<!--        ],-->
+<!--        series: [{-->
+<!--            name: '销量',-->
+<!--            type: 'bar',-->
+<!--            data: [5, 20, 36, 10, 10, 20]-->
+<!--        }]-->
+<!--    };-->
+
+<!--    // 使用刚指定的配置项和数据显示图表。-->
+<!--    // myChart.setOption(option);-->
+<!--    echarts.init(document.getElementById('main')).setOption(option);-->
+<!--</script>-->
+<!--<script>-->
+<!--    const CubeLeft = echarts.graphic.extendShape({-->
+<!--        shape: {-->
+<!--            x: 0,-->
+<!--            y: 0-->
+<!--        },-->
+<!--        buildPath: function(ctx, shape) {-->
+<!--            const xAxisPoint = shape.xAxisPoint-->
+<!--            const c0 = [shape.x, shape.y]-->
+<!--            const c1 = [shape.x - 9, shape.y - 9]-->
+<!--            const c2 = [xAxisPoint[0] - 9, xAxisPoint[1] - 9]-->
+<!--            const c3 = [xAxisPoint[0], xAxisPoint[1]]-->
+<!--            ctx.moveTo(c0[0], c0[1]).lineTo(c1[0], c1[1]).lineTo(c2[0], c2[1]).lineTo(c3[0], c3[1]).closePath()-->
+<!--        }-->
+<!--    })-->
+<!--    const CubeRight = echarts.graphic.extendShape({-->
+<!--        shape: {-->
+<!--            x: 0,-->
+<!--            y: 0-->
+<!--        },-->
+<!--        buildPath: function(ctx, shape) {-->
+<!--            const xAxisPoint = shape.xAxisPoint-->
+<!--            const c1 = [shape.x, shape.y]-->
+<!--            const c2 = [xAxisPoint[0], xAxisPoint[1]]-->
+<!--            const c3 = [xAxisPoint[0] + 18, xAxisPoint[1] - 9]-->
+<!--            const c4 = [shape.x + 18, shape.y - 9]-->
+<!--            ctx.moveTo(c1[0], c1[1]).lineTo(c2[0], c2[1]).lineTo(c3[0], c3[1]).lineTo(c4[0], c4[1]).closePath()-->
+<!--        }-->
+<!--    })-->
+<!--    const CubeTop = echarts.graphic.extendShape({-->
+<!--        shape: {-->
+<!--            x: 0,-->
+<!--            y: 0-->
+<!--        },-->
+<!--        buildPath: function(ctx, shape) {-->
+<!--            const c1 = [shape.x, shape.y]-->
+<!--            const c2 = [shape.x + 18, shape.y - 9]-->
+<!--            const c3 = [shape.x + 9, shape.y - 18]-->
+<!--            const c4 = [shape.x - 9, shape.y - 9]-->
+<!--            ctx.moveTo(c1[0], c1[1]).lineTo(c2[0], c2[1]).lineTo(c3[0], c3[1]).lineTo(c4[0], c4[1]).closePath()-->
+<!--        }-->
+<!--    })-->
+<!--    echarts.graphic.registerShape('CubeLeft', CubeLeft)-->
+<!--    echarts.graphic.registerShape('CubeRight', CubeRight)-->
+<!--    echarts.graphic.registerShape('CubeTop', CubeTop)-->
+<!--    const MAX = [6000, 6000, 6000, 6000, 6000]-->
+<!--    const VALUE = [2012, 1230, 3790, 2349, 1654]-->
+<!--    option = {-->
+<!--            backgroundColor: "#012366",-->
+<!--        title: {-->
+<!--            text: '能源需求',-->
+<!--            top: 32,-->
+<!--            left: 18,-->
+<!--            textStyle: {-->
+<!--                color: '#00F6FF',-->
+<!--                fontSize: 24-->
+<!--            }-->
+<!--        },-->
+<!--        grid: {-->
+<!--            left: 20,-->
+<!--            right: 40,-->
+<!--            bottom: '19%',-->
+<!--            top: 107,-->
+<!--            containLabel: true-->
+<!--        },-->
+<!--        xAxis: {-->
+<!--            type: 'category',-->
+<!--            data: ['冷', '热', '电', '水', '气'],-->
+<!--            axisLine: {-->
+<!--                show: true,-->
+<!--                lineStyle: {-->
+<!--                    color: 'white'-->
+<!--                }-->
+<!--            },-->
+<!--            offset: 40,-->
+<!--            axisTick: {-->
+<!--                show: false,-->
+<!--                length: 9,-->
+<!--                alignWithLabel: true,-->
+<!--                lineStyle: {-->
+<!--                    color: '#7DFFFD'-->
+<!--                }-->
+<!--            },-->
+<!--            axisLabel: {-->
+<!--                fontSize: 12-->
+<!--            }-->
+<!--        },-->
+<!--        yAxis: {-->
+<!--            // type: 'value',-->
+<!--            axisLine: {-->
+<!--                show: true,-->
+<!--                lineStyle: {-->
+<!--                    color: 'white'-->
+<!--                }-->
+<!--            },-->
+<!--            splitLine: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            axisTick: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            axisLabel: {-->
+<!--                fontSize: 16-->
+<!--            },-->
+<!--            // min:0,-->
+<!--            // max:100,-->
+<!--            boundaryGap: ['10%', '70%'],-->
+<!--        },-->
+<!--        series: [{-->
+<!--            type: 'custom',-->
+<!--            renderItem: function(params, api) {-->
+<!--                const location = api.coord([api.value(0), api.value(1)])-->
+<!--                return {-->
+<!--                    type: 'group',-->
+<!--                    children: [{-->
+<!--                        type: 'CubeLeft',-->
+<!--                        shape: {-->
+<!--                            api,-->
+<!--                            xValue: api.value(0),-->
+<!--                            yValue: api.value(1),-->
+<!--                            x: location[0],-->
+<!--                            y: location[1],-->
+<!--                            xAxisPoint: api.coord([api.value(0), 0])-->
+<!--                        },-->
+<!--                        style: {-->
+<!--                            fill: 'rgba(47,102,192,.27)'-->
+<!--                        }-->
+<!--                    }, {-->
+<!--                        type: 'CubeRight',-->
+<!--                        shape: {-->
+<!--                            api,-->
+<!--                            xValue: api.value(0),-->
+<!--                            yValue: api.value(1),-->
+<!--                            x: location[0],-->
+<!--                            y: location[1],-->
+<!--                            xAxisPoint: api.coord([api.value(0), 0])-->
+<!--                        },-->
+<!--                        style: {-->
+<!--                            fill: 'rgba(59,128,226,.27)'-->
+<!--                        }-->
+<!--                    }, {-->
+<!--                        type: 'CubeTop',-->
+<!--                        shape: {-->
+<!--                            api,-->
+<!--                            xValue: api.value(0),-->
+<!--                            yValue: api.value(1),-->
+<!--                            x: location[0],-->
+<!--                            y: location[1],-->
+<!--                            xAxisPoint: api.coord([api.value(0), 0])-->
+<!--                        },-->
+<!--                        style: {-->
+<!--                            fill: 'rgba(72,156,221,.27)'-->
+<!--                        }-->
+<!--                    }]-->
+<!--                }-->
+<!--            },-->
+<!--            data: MAX-->
+<!--        }, {-->
+<!--            type: 'custom',-->
+<!--            renderItem: (params, api) => {-->
+<!--                const location = api.coord([api.value(0), api.value(1)])-->
+<!--                return {-->
+<!--                    type: 'group',-->
+<!--                    children: [{-->
+<!--                        type: 'CubeLeft',-->
+<!--                        shape: {-->
+<!--                            api,-->
+<!--                            xValue: api.value(0),-->
+<!--                            yValue: api.value(1),-->
+<!--                            x: location[0],-->
+<!--                            y: location[1],-->
+<!--                            xAxisPoint: api.coord([api.value(0), 0])-->
+<!--                        },-->
+<!--                        style: {-->
+<!--                            fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{-->
+<!--                                offset: 0,-->
+<!--                                color: '#3B80E2'-->
+<!--                            },-->
+<!--                                {-->
+<!--                                    offset: 1,-->
+<!--                                    color: '#49BEE5'-->
+<!--                                }-->
+<!--                            ])-->
+<!--                        }-->
+<!--                    }, {-->
+<!--                        type: 'CubeRight',-->
+<!--                        shape: {-->
+<!--                            api,-->
+<!--                            xValue: api.value(0),-->
+<!--                            yValue: api.value(1),-->
+<!--                            x: location[0],-->
+<!--                            y: location[1],-->
+<!--                            xAxisPoint: api.coord([api.value(0), 0])-->
+<!--                        },-->
+<!--                        style: {-->
+<!--                            fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{-->
+<!--                                offset: 0,-->
+<!--                                color: '#3B80E2'-->
+<!--                            },-->
+<!--                                {-->
+<!--                                    offset: 1,-->
+<!--                                    color: '#49BEE5'-->
+<!--                                }-->
+<!--                            ])-->
+<!--                        }-->
+<!--                    }, {-->
+<!--                        type: 'CubeTop',-->
+<!--                        shape: {-->
+<!--                            api,-->
+<!--                            xValue: api.value(0),-->
+<!--                            yValue: api.value(1),-->
+<!--                            x: location[0],-->
+<!--                            y: location[1],-->
+<!--                            xAxisPoint: api.coord([api.value(0), 0])-->
+<!--                        },-->
+<!--                        style: {-->
+<!--                            fill: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{-->
+<!--                                offset: 0,-->
+<!--                                color: '#3B80E2'-->
+<!--                            },-->
+<!--                                {-->
+<!--                                    offset: 1,-->
+<!--                                    color: '#49BEE5'-->
+<!--                                }-->
+<!--                            ])-->
+<!--                        }-->
+<!--                    }]-->
+<!--                }-->
+<!--            },-->
+<!--            data: VALUE-->
+<!--        }, {-->
+<!--            type: 'bar',-->
+<!--            label: {-->
+<!--                normal: {-->
+<!--                    show: true,-->
+<!--                    position: '',-->
+<!--                    // formatter: (e) => {-->
+<!--                    //     switch (e.name) {-->
+<!--                    //         case '冷':-->
+<!--                    //             return VALUE[0]-->
+<!--                    //         case '热':-->
+<!--                    //             return VALUE[1]-->
+<!--                    //         case '电':-->
+<!--                    //             return VALUE[2]-->
+<!--                    //         case '水':-->
+<!--                    //             return VALUE[3]-->
+<!--                    //         case '气':-->
+<!--                    //             return VALUE[4]-->
+<!--                    //     }-->
+<!--                    // },-->
+<!--                    fontSize: 26,-->
+<!--                    color: '#fff',-->
+<!--                    //offset: [4, -25]-->
+<!--                }-->
+<!--            },-->
+<!--            itemStyle: {-->
+<!--                color: 'transparent'-->
+<!--            },-->
+<!--            data: MAX-->
+<!--        }]-->
+<!--    }-->
+<!--    echarts.init(document.getElementById('main')).setOption(option);-->
+<!--</script>-->
+
+<!--<script>-->
+<!--    // import echarts from 'echarts'-->
+<!--    var charts = { // 按顺序排列从大到小-->
+<!--        cityList: ['38号点（1）', '38号点（2）', '15号点', '16号点', '24号点'],-->
+<!--        cityData: [7500, 6200, 5700, 4200, 3500]-->
+<!--    }-->
+<!--    var top10CityList = charts.cityList;-->
+<!--    var top10CityData = charts.cityData;-->
+<!--    var color = ['rgba(248,195,248', 'rgba(100,255,249', 'rgba(135,183,255', 'rgba(248,195,248', 'rgba(100,255,249']-->
+
+<!--    let lineY = [];-->
+<!--    for (var i = 0; i < charts.cityList.length; i++) {-->
+<!--        var x = i-->
+<!--        if (x > color.length - 1) {-->
+<!--            x = color.length - 1-->
+<!--        }-->
+<!--        var data = {-->
+<!--            name: charts.cityList[i],-->
+<!--            color: color[x] + ')',-->
+<!--            value: top10CityData[i],-->
+<!--            itemStyle: {-->
+<!--                normal: {-->
+<!--                    show: true,-->
+<!--                    color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{-->
+<!--                        offset: 0,-->
+<!--                        color: color[x] + ', 0.3)'-->
+<!--                    }, {-->
+<!--                        offset: 1,-->
+<!--                        color: color[x] + ', 1)'-->
+<!--                    }], false),-->
+<!--                    barBorderRadius: 10-->
+<!--                },-->
+<!--                emphasis: {-->
+<!--                    shadowBlur: 15,-->
+<!--                    shadowColor: 'rgba(0, 0, 0, 0.1)'-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--        lineY.push(data)-->
+<!--    }-->
+
+<!--    console.log(lineY)-->
+<!--    option= {-->
+<!--        backgroundColor:'#000',-->
+<!--        title: {-->
+<!--            show: false-->
+<!--        },-->
+<!--        tooltip: {-->
+<!--            trigger: 'item'-->
+<!--        },-->
+<!--        grid: {-->
+<!--            borderWidth: 1,-->
+<!--            top: '10%',-->
+<!--            left: '5%',-->
+<!--            right: '15%',-->
+<!--            bottom: '3%'-->
+<!--        },-->
+<!--        color: color,-->
+<!--        yAxis: [{-->
+<!--            type: 'category',-->
+<!--            inverse: true,-->
+<!--            axisTick: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            axisLine: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            axisLabel: {-->
+<!--                show: false,-->
+<!--                inside: false-->
+<!--            },-->
+<!--            data: top10CityList-->
+<!--        }, {-->
+<!--            type: 'category',-->
+<!--            axisLine: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            axisTick: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            axisLabel: {-->
+<!--                show: true,-->
+<!--                inside: false,-->
+<!--                textStyle: {-->
+<!--                    color: '#b3ccf8',-->
+<!--                    fontSize: '20',-->
+<!--                    fontFamily: 'PingFangSC-Regular'-->
+<!--                },-->
+<!--                formatter: function (val) {-->
+<!--                    // return `${val}k`-->
+<!--                    return val+'k';-->
+<!--                }-->
+<!--            },-->
+<!--            splitArea: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            splitLine: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            data: top10CityData-->
+<!--        }],-->
+<!--        xAxis: {-->
+<!--            type: 'value',-->
+<!--            axisTick: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            axisLine: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            splitLine: {-->
+<!--                show: false-->
+<!--            },-->
+<!--            axisLabel: {-->
+<!--                show: false-->
+<!--            }-->
+<!--        },-->
+<!--        series: [{-->
+<!--            name: '',-->
+<!--            type: 'bar',-->
+<!--            zlevel: 2,-->
+<!--            barWidth: '10px',-->
+<!--            data: lineY,-->
+<!--            animationDuration: 1500,-->
+<!--            label: {-->
+<!--                normal: {-->
+<!--                    color: '#b3ccf8',-->
+<!--                    show: true,-->
+<!--                    position: [0, '-24px'],-->
+<!--                    textStyle: {-->
+<!--                        fontSize: 16-->
+<!--                    },-->
+<!--                    formatter: function (a, b) {-->
+<!--                        return a.name-->
+<!--                    }-->
+<!--                }-->
+<!--            }-->
+<!--        }],-->
+<!--        animationEasing: 'cubicOut'-->
+<!--    }-->
+<!--    echarts.init(document.getElementById('main')).setOption(option);-->
+
+<!--</script>-->
+<script>
+    var cost = [0.5, 0.201, 0.6,0.7, 0.301, 0.8,0.4]//本期比上期（大于1按1处理）
+    var dataCost = [10.01,200,200,1000.01,200000,200,200000]//真是的金额
+    var totalCost = [ 1,1, 1, 1,1]//比例综合
+    var visits = [24, 76, 89,92, 22, 89,92]//本期占总的百分比*100
+    var grade = ['5级隐患','4级隐患','3级隐患','2级隐患','1级隐患', ]
+    var myColor = ['#21BF57','#56D0E3',  '#1089E7', '#F8B448','#F57474', ];
+    var data = {
+        grade: grade,
+        cost: cost,
+        totalCost: totalCost,
+        visits: visits,
+        dataCost:dataCost
+    };
+    option = {
+        backgroundColor: '#05274C',
         title: {
-            text: '第一个[ ECharts ]实例'
+            top: '2%',
+            left: 'center',
+            text: '民用月隐患统计',
+            textStyle: {
+                align: 'center',
+                color: '#4DCEF8',
+                fontSize: 18
+            }
         },
-        tooltip: {},
-        legend: {
-            // data:['销量']
+        grid: {
+            left: '130',
+            right: '100'
         },
         xAxis: {
-            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            show: false,
         },
-        yAxis: {},
+        yAxis: {
+            type: 'category',
+            axisLabel: {
+                margin:10,
+                show: true,
+                color: 'red',
+                fontSize: 14
+            },
+            axisTick: {
+                show: false,
+            },
+            axisLine: {
+                show: false,
+            },
+            data: data.grade
+        },
         series: [{
-            name: '销量',
             type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
+            barGap: '5%',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'right',
+                    color: '#fff',
+                    fontSize: 14,
+                    formatter:
+                        function(param) {
+                            return data.visits[param.dataIndex] +'%';
+                        },
+                }
+            },
+            barWidth: '30%',
+            itemStyle: {
+                normal: {
+                    borderColor: '#4DCEF8',
+                    borderWidth: 2,
+                    barBorderRadius: 15,
+                    color: 'rgba(102, 102, 102,0)'
+                },
+            },
+            z: 1,
+            data: data.totalCost,
+            // data: da
+        }, {
+            type: 'bar',
+            barGap: '-85%',
+            barWidth: '21%',
+            itemStyle: {
+                normal: {
+                    barBorderRadius: 16,
+                    color: function(params) {
+                        var num = myColor.length;
+                        return myColor[params.dataIndex % num]
+                    },
+                }
+            },
+            max: 1,
+            label: {
+                normal: {
+                    show: true,
+                    position: 'inside',
+                    formatter: '{c}%'
+                }
+            },
+            labelLine: {
+                show: true,
+            },
+            z: 2,
+            data: data.cost,
         }]
-    };
-
-    // 使用刚指定的配置项和数据显示图表。
-    // myChart.setOption(option);
-     echarts.init(document.getElementById('main')).setOption(option);
+    }
+    echarts.init(document.getElementById('main')).setOption(option);
 </script>
 </body>
 </html>
