@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="layui.all.js"></script>
+    <link href="css/layui.css" rel="stylesheet">
+</head>
+<body>
+
+<script>
+    //由于模块都一次性加载，因此不用执行 layui.use() 来加载对应模块，直接使用即可：
+    ;!function(){
+        var layer=layui.layer;
+        var $=layui.jquery;
+        var $=layui.$;
+        var form=layui.form;
+        var laypage=layui.laypage;
+        var laydate=layui.laydate;
+        var element = layui.element;
+
+        // var layer=layui.layer,
+        //     $=layui.jquery,
+        //     $=layui.$,
+        //     form=layui.form,
+        //     laypage=layui.laypage,
+        //     laydate=layui.laydate,
+        //     element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+            //layer.msg('Hello World');
+
+            // layer.ready(function(){
+            //     layer.msg('页面刷新就弹出');
+            // });
+
+            // laypage.render({
+            //     elem: 'demo1'
+            //     ,count: 100 //总页数
+            //  });
+
+        //测试加载非内置模块
+        // layui.config({ //可以用
+        //     base:'../examples/extends/'
+        // }).use("mod1");
+
+        // layui.config({
+        //     base: 'res/js/'
+        //     //你存放新模块的目录，注意，不是layui的模块目录
+        // }).use('index'); //加载入口 只能用单英文命名
+ }();
+</script>
+<script>
+
+    //页面加载就弹出提示框
+    // layer.ready(function(){
+    //     layer.msg('页面刷新就弹出');
+    // });
+
+    // layui.use(['form', 'upload'], function(){  //如果只加载一个模块，可以不填数组。如：layui.use('form')
+    //     var form = layui.form //获取form模块
+    //         ,upload = layui.upload; //获取upload模块
+    //
+    //     //监听提交按钮
+    //     form.on('submit(test)', function(data){
+    //         console.log(data);
+    //     });
+
+        //实例化一个上传控件
+        // upload({
+        //     url: '上传接口url'
+        //     ,success: function(data){
+        //         console.log(data);
+        //     }
+        // })
+    //});
+
+
+    //config的设置是全局的
+    // layui.config({
+    //     base: 'res/js/' //假设这是你存放拓展模块的根目录
+    // }).extend({ //设定模块别名
+    //     mymod: 'mymod' //如果 mymod.js 是在根目录，也可以不用设定别名
+    //     ,mod1: 'admin/mod1' //相对于上述 base 目录的子目录
+    // });
+    //
+    // //你也可以忽略 base 设定的根目录，直接在 extend 指定路径（主要：该功能为 layui 2.2.0 新增）
+    // layui.extend({
+    //     mod2: '{/}http://cdn.xxx.com/lib/mod2' // {/}的意思即代表采用自有路径，即不跟随 base 路径
+    // })
+    // //使用拓展模块
+    // layui.use(['mymod', 'mod1'], function(){
+    //     var mymod = layui.mymod
+    //         ,mod1 = layui.mod1
+    //         ,mod2 = layui.mod2;
+    //
+    //     mymod.hello('World!'); //弹出 Hello World!
+    // });
+</script>
+
+
+<!--<div class="layui-inline"> &lt;!&ndash; 注意：这一层元素并不是必须的 &ndash;&gt;-->
+<!--    <input type="text" class="layui-input" id="test1">-->
+<!--</div>-->
+<script>
+        // layer.ready(function(){
+        //     layer.msg('页面刷新就弹出');
+        // });
+
+    //日期和时间选择
+    // layui.laydate.render({
+    //     elem: '#test1' //指定元素
+    // });
+
+    //年选择器
+    // layui.laydate.render({
+    //     elem: '#test1'
+    //     ,type: 'year'
+    // });
+
+        //年月选择器
+        // layui.laydate.render({
+        //     elem: '#test1'
+        //     ,type: 'month'
+        // });
+
+        //日期选择器
+        // layui.laydate.render({
+        //     elem: '#test1'
+        //     //,type: 'date' //默认，可不填
+        // });
+
+        //时间选择器
+        // layui.laydate.render({
+        //     elem: '#test1'
+        //     ,type: 'time'
+        // });
+
+        //日期时间选择器
+        // layui.laydate.render({
+        //     elem: '#test1'
+        //     ,type: 'datetime'
+        // });
+
+        //年范围选择
+        // layui.laydate.render({
+        //     elem: '#test1'
+        //     ,type: 'year'
+        //     ,range: true //或 range: '~' 来自定义分割字符
+        // });
+        //年月范围选择
+        // layui.laydate.render({
+        //     elem: '#test1'
+        //     ,type: 'month'
+        //     ,range: '~' //或 range: '~' 来自定义分割字符
+        // });
+        //
+        // //日期范围选择
+        // layui.laydate.render({
+        //     elem: '#test1'
+        //     ,range: true //或 range: '~' 来自定义分割字符
+        // });
+        //
+        // //时间范围选择
+        // layui.laydate.render({
+        //     elem: '#test1'
+        //     ,type: 'time'
+        //     ,range: true //或 range: '~' 来自定义分割字符
+        // });
+        //
+        // //日期时间范围选择
+        // layui.laydate.render({
+        //     elem: '#test1'
+        //     ,type: 'datetime'
+        //     ,range: true //或 range: '~' 来自定义分割字符
+        // });
+</script>
+
+<script>
+    layui.form.render();
+</script>
+<form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+    <div class="layui-form-item">
+        <label class="layui-form-label">输入框</label>
+        <div class="layui-input-block">
+            <input type="text" name="" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">下拉选择框</label>
+        <div class="layui-input-block">
+            <select name="interest" lay-filter="aihao">
+                <option value="0">写作</option>
+                <option value="1">阅读</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">复选框</label>
+        <div class="layui-input-block">
+            <input type="checkbox" name="like[write]" title="写作">
+            <input type="checkbox" name="like[read]" title="阅读">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">开关关</label>
+        <div class="layui-input-block">
+            <input type="checkbox" lay-skin="switch">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">开关开</label>
+        <div class="layui-input-block">
+            <input type="checkbox" checked lay-skin="switch">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">单选框</label>
+        <div class="layui-input-block">
+            <input type="radio" name="sex" value="0" title="男">
+            <input type="radio" name="sex" value="1" title="女" checked>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">请填写描述</label>
+        <div class="layui-input-block">
+            <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="*">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+    <!-- 更多表单结构排版请移步文档左侧【页面元素-表单】一项阅览 -->
+</form>
+
+
+
+<!--<div class="layui-tab">-->
+<!--    <ul class="layui-tab-title">-->
+<!--        <li class="layui-this">标题一</li>-->
+<!--        <li>标题二</li>-->
+<!--        <li>标题三</li>-->
+<!--    </ul>-->
+<!--    <div class="layui-tab-content">-->
+<!--        <div class="layui-tab-item layui-show">内容1</div>-->
+<!--        <div class="layui-tab-item">内容2</div>-->
+<!--        <div class="layui-tab-item">内容3</div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<button class="layui-btn" lay-submit lay-filter="login">登入</button>-->
+
+
+
+</body>
+</html>

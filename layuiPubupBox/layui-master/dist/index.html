@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>中国我爱你</title>
-<!--<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>-->
+    <!--<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>-->
 </head>
 
 <body>
@@ -59,7 +59,7 @@
 <!--</script>-->
 <script>
     // layer.msg('hello');
-      layui.use('layer',function () {
+    layui.use('layer',function () {
         var layer=layui.layer,$=layui.jquery,$=layui.$;
         // console.log($("#ids").text());
 
@@ -70,7 +70,7 @@
             //skin: 'layer-ext-yourskin'
         })
 
-         //layer.alert('layer皮肤-Yourskin');
+        //layer.alert('layer皮肤-Yourskin');
         //layer.msg("不一样的烟火")
         // layer.open({
         //     type:2,
@@ -96,63 +96,63 @@
         //     // content:$("#ids")
         // })
 
-          // layer.open({
-          //     content: '测试回调',
-          //     success: function(layero, index){
-          //         console.log(layero, index);
-          //     }
-          // });
+        // layer.open({
+        //     content: '测试回调',
+        //     success: function(layero, index){
+        //         console.log(layero, index);
+        //     }
+        // });
 
-          // layer.open({
-          //     content: '测试回调',
-          //     yes: function(index, layero){
-          //         //do something
-          //         layer.close(index); //如果设定了yes回调，需进行手工关闭
-          //     },
-          //     cancel: function(index, layero){
-          //         if(confirm('确定要关闭么')){ //只有当点击confirm框的确定时，该层才会关闭
-          //             layer.close(index)
-          //         }
-          //         return false;
-          //     }
-          // });
+        // layer.open({
+        //     content: '测试回调',
+        //     yes: function(index, layero){
+        //         //do something
+        //         layer.close(index); //如果设定了yes回调，需进行手工关闭
+        //     },
+        //     cancel: function(index, layero){
+        //         if(confirm('确定要关闭么')){ //只有当点击confirm框的确定时，该层才会关闭
+        //             layer.close(index)
+        //         }
+        //         return false;
+        //     }
+        // });
 
-          // layer.open({
-          //     type: 2,
-          //     shade: false,
-          //     area: '500px',
-          //     maxmin: true,
-          //     content: 'http://www.layui.com',
-          //     zIndex: layer.zIndex, //重点1
-          //     success: function(layero){
-          //         layer.setTop(layero); //重点2
-          //     }
-          // });
+        // layer.open({
+        //     type: 2,
+        //     shade: false,
+        //     area: '500px',
+        //     maxmin: true,
+        //     content: 'http://www.layui.com',
+        //     zIndex: layer.zIndex, //重点1
+        //     success: function(layero){
+        //         layer.setTop(layero); //重点2
+        //     }
+        // });
 
-          // layer.prompt({
-          //     formType: 2,
-          //     value: '初始值',
-          //     title: '请输入值',
-          //     area: ['800px', '350px'] //自定义文本域宽高
-          // }, function(value, index, elem){
-          //     alert(value); //得到value
-          //     layer.close(index);
-          // });
+        // layer.prompt({
+        //     formType: 2,
+        //     value: '初始值',
+        //     title: '请输入值',
+        //     area: ['800px', '350px'] //自定义文本域宽高
+        // }, function(value, index, elem){
+        //     alert(value); //得到value
+        //     layer.close(index);
+        // });
 
-          layer.tab({
-              skin:'heatVideoTable',
-              area: ['1000px','600px'],
-              tab: [{
-                  title: '电商视频热度监控',
-                  content: '内容1'
-              }, {
-                  title: '商品相关推广视频',
-                  content: '<iframe src="template.html" frameborder="0" id="heatIframe"></iframe>'
-              }]
-          });
+        layer.tab({
+            skin:'heatVideoTable',
+            area: ['1000px','600px'],
+            tab: [{
+                title: '电商视频热度监控',
+                content: '内容1'
+            }, {
+                title: '商品相关推广视频',
+                content: '<iframe src="template.html" frameborder="0" id="heatIframe"></iframe>'
+            }]
+        });
 
 
-      })
+    })
 </script>
 
 
